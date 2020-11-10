@@ -1,0 +1,20 @@
+name: Simple Workflow Example
+on :   [push]
+jobs:
+  build:
+
+  name : Greet
+  runs-on : ubuntu-latest
+
+  steps:
+   - name: Hello World Step
+     run:  echo Hello World!
+
+     time:
+       name: Print date
+       # 7
+       needs:
+         - build
+       runs-on: ubuntu-latest
+       steps:
+         - run: echo "It is $(date)"
