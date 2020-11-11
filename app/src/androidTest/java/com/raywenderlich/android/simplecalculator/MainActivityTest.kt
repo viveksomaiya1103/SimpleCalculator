@@ -47,6 +47,7 @@ class MainActivityTest : TestCase() {
   @Test
   fun testMainActivity() {
     before {
+
       activityTestRule.launchActivity(null)
       testLogger.i("Starting test")
     }.after {
