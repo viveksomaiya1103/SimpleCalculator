@@ -2,20 +2,21 @@ name: CI WorkFLow
 on: [push]
 
 jobs:
-     build-run-test:
-       name: Build and run Test
-       run-on: ubuntu-latest
+  build-and-test:
+    name: Build and run tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout current repository in ubuntu's file system
+        uses: actions/checkout@v1
+      - name: Setup JDK 1.8
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+      - name: Print contents in current directory
+        run: ls -la
 
-       steps:
-         - name: Check out current repository in ubuntu file system
-           uses: actions/checkout@v1
 
-          - name: Steup JDK 1.8
-            uses: actions/stepup-java@v1
 
-            with:
-            java-version: 1.8
 
-            -name: Print Content of current dirctory
-             run: ls -la
+
 
